@@ -1,0 +1,332 @@
+Last login: Wed Sep 25 11:33:50 2024 from 10.0.2.2
+vagrant@ubuntu-bionic:~$ ls
+Demo.txt  my_folder  scripts
+vagrant@ubuntu-bionic:~$
+vagrant@ubuntu-bionic:~$ nslookup guvi.in
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 172.67.70.207
+Name:   guvi.in
+Address: 104.26.4.88
+Name:   guvi.in
+Address: 104.26.5.88
+Name:   guvi.in
+Address: 2606:4700:91ba:d255:c176:80e:60b8:c78e
+
+vagrant@ubuntu-bionic:~$
+vagrant@ubuntu-bionic:~$ htop
+vagrant@ubuntu-bionic:~$ vagrant@ubuntu-bionic:~$ ^C
+vagrant@ubuntu-bionic:~$ top
+top - 12:04:25 up 3 min,  1 user,  load average: 0.12, 0.30, 0.15
+Tasks: 103 total,   1 running,  51 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  1008516 total,   657884 free,    85488 used,   265144 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   780980 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 1832 vagrant   20   0   42236   3672   3084 R   0.7  0.4   0:00.07 top
+   17 root      20   0       0      0      0 I   0.3  0.0   0:00.59 kworker/1:0
+  422 root      20   0       0      0      0 I   0.3  0.0   0:00.88 kworker/0:3
+    1 root      20   0  159652   8968   6732 S   0.0  0.9   0:07.75 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.07 kthreadd
+    3 root      20   0       0      0      0 I   0.0  0.0   0:00.43 kworker/0:0
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/0:0H
+    5 root      20   0       0      0      0 I   0.0  0.0   0:00.37 kworker/u4:0
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.23 ksoftirqd/0
+    8 root      20   0       0      0      0 I   0.0  0.0   0:00.35 rcu_sched
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.02 migration/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/0
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/1
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 watchdog/1
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.30 migration/1
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.41 ksoftirqd/1
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/1:0H
+   19 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kdevtmpfs
+   20 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 netns
+   21 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_tasks_kthre
+vagrant@ubuntu-bionic:~$ dig guvi.in
+
+; <<>> DiG 9.11.3-1ubuntu1.18-Ubuntu <<>> guvi.in
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61555
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;guvi.in.                       IN      A
+
+;; ANSWER SECTION:
+guvi.in.                241     IN      A       104.26.5.88
+guvi.in.                241     IN      A       104.26.4.88
+guvi.in.                241     IN      A       172.67.70.207
+
+;; Query time: 4 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Thu Sep 26 12:04:44 UTC 2024
+;; MSG SIZE  rcvd: 84
+
+vagrant@ubuntu-bionic:~$ dig www.guvi.in
+
+; <<>> DiG 9.11.3-1ubuntu1.18-Ubuntu <<>> www.guvi.in
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24507
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;www.guvi.in.                   IN      A
+
+;; ANSWER SECTION:
+www.guvi.in.            3       IN      A       104.26.5.88
+www.guvi.in.            3       IN      A       104.26.4.88
+www.guvi.in.            3       IN      A       172.67.70.207
+
+;; Query time: 33 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Thu Sep 26 12:05:17 UTC 2024
+;; MSG SIZE  rcvd: 88
+
+vagrant@ubuntu-bionic:~$ ping www.guvi.in
+PING www.guvi.in(2606:4700:83ba:d255:c176:80f:60b8:c78e (2606:4700:83ba:d255:c176:80f:60b8:c78e)) 56 data bytes
+^C
+--- www.guvi.in ping statistics ---
+36 packets transmitted, 0 received, 100% packet loss, time 36218ms
+
+vagrant@ubuntu-bionic:~$ ping www.google.com
+PING www.google.com(maa05s05-in-x04.1e100.net (2404:6800:4007:80f::2004)) 56 data bytes
+^C
+--- www.google.com ping statistics ---
+72 packets transmitted, 0 received, 100% packet loss, time 74634ms
+
+vagrant@ubuntu-bionic:~$ ping www.guvi.in
+PING www.guvi.in(2606:4700:83ba:d255:c13b:401:60b8:c78e) 56 data bytes
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=1 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=2 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=3 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=4 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=5 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=6 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=7 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=8 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=9 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=10 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:3b:7bff:feb7:3b2d icmp_seq=11 Destination unreachable: Address unreachable
+^C
+--- www.guvi.in ping statistics ---
+11 packets transmitted, 0 received, +11 errors, 100% packet loss, time 19241ms
+
+vagrant@ubuntu-bionic:~$ ping www.google.com
+PING www.google.com(maa05s05-in-x04.1e100.net (2404:6800:4007:80f::2004)) 56 data bytes
+^CFrom 2401:4900:65b8:70b2:a00:27ff:feba:cdbd icmp_seq=1 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:a00:27ff:feba:cdbd icmp_seq=2 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:a00:27ff:feba:cdbd icmp_seq=3 Destination unreachable: Address unreachable
+From 2401:4900:65b8:70b2:a00:27ff:feba:cdbd icmp_seq=4 Destination unreachable: Address unreachable
+
+--- www.google.com ping statistics ---
+4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 3110ms
+
+vagrant@ubuntu-bionic:~$ tracroute www.guvi.in
+
+Command 'tracroute' not found, did you mean:
+
+  command 'traceroute' from deb inetutils-traceroute
+  command 'traceroute' from deb traceroute
+
+Try: apt install <deb name>
+
+vagrant@ubuntu-bionic:~$ traceroute www.guvi.in
+
+Command 'traceroute' not found, but can be installed with:
+
+apt install inetutils-traceroute
+apt install traceroute
+
+Ask your administrator to install one of them.
+
+vagrant@ubuntu-bionic:~$ sudo apt install inetutils-traceroute
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  inetutils-traceroute
+0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+Need to get 40.8 kB of archives.
+After this operation, 261 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 inetutils-traceroute amd64 2:1.9.4-3ubuntu0.1 [40.8 kB]
+Fetched 40.8 kB in 2s (26.3 kB/s)
+Selecting previously unselected package inetutils-traceroute.
+(Reading database ... 90946 files and directories currently installed.)
+Preparing to unpack .../inetutils-traceroute_2%3a1.9.4-3ubuntu0.1_amd64.deb ...
+Unpacking inetutils-traceroute (2:1.9.4-3ubuntu0.1) ...
+Setting up inetutils-traceroute (2:1.9.4-3ubuntu0.1) ...
+update-alternatives: using /usr/bin/inetutils-traceroute to provide /usr/bin/traceroute (traceroute) in auto mode
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+vagrant@ubuntu-bionic:~$ sudo apt install traceroute
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  traceroute
+0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+Need to get 45.4 kB of archives.
+After this operation, 152 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/universe amd64 traceroute amd64 1:2.1.0-2 [45.4 kB]
+Fetched 45.4 kB in 1s (35.0 kB/s)
+Selecting previously unselected package traceroute.
+(Reading database ... 90955 files and directories currently installed.)
+Preparing to unpack .../traceroute_1%3a2.1.0-2_amd64.deb ...
+Unpacking traceroute (1:2.1.0-2) ...
+Setting up traceroute (1:2.1.0-2) ...
+update-alternatives: using /usr/bin/lft.db to provide /usr/bin/lft (lft) in auto mode
+update-alternatives: using /usr/bin/traceproto.db to provide /usr/bin/traceproto (traceproto) in auto mode
+update-alternatives: using /usr/sbin/tcptraceroute.db to provide /usr/sbin/tcptraceroute (tcptraceroute) in auto mode
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+vagrant@ubuntu-bionic:~$ traceroute www.guvi.in
+traceroute to www.guvi.in (104.26.5.88), 64 hops max
+  1   10.0.2.2  1.096ms  0.751ms  0.641ms
+  2   10.0.2.2  4.588ms  3.018ms  2.755ms
+vagrant@ubuntu-bionic:~$ netsate -a
+
+Command 'netsate' not found, did you mean:
+
+  command 'netmate' from deb netmate
+
+Try: apt install <deb name>
+
+vagrant@ubuntu-bionic:~$ netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 localhost:domain        0.0.0.0:*               LISTEN
+tcp        0      0 0.0.0.0:ssh             0.0.0.0:*               LISTEN
+tcp        0      0 10.0.2.15:ssh           10.0.2.2:49929          ESTABLISHED
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+udp        0      0 192.168.148.115:35828   192.168.148.137:domain  ESTABLISHED
+udp        0    768 192.168.148.115:54806   192.168.148.137:domain  ESTABLISHED
+udp        0      0 localhost:domain        0.0.0.0:*
+udp        0      0 192.168.148.115:bootpc  0.0.0.0:*
+udp        0      0 10.0.2.15:bootpc        0.0.0.0:*
+udp        0      0 10.0.2.15:bootpc        0.0.0.0:*
+raw6       0      0 [::]:ipv6-icmp          [::]:*                  7
+raw6       0      0 [::]:ipv6-icmp          [::]:*                  7
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    22260    /run/user/1000/systemd/notify
+unix  2      [ ACC ]     SEQPACKET  LISTENING     452      /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     22263    /run/user/1000/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     22267    /run/user/1000/gnupg/S.gpg-agent.ssh
+unix  2      [ ACC ]     STREAM     LISTENING     22268    /run/user/1000/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     22269    /run/user/1000/gnupg/S.dirmngr
+unix  2      [ ACC ]     STREAM     LISTENING     22270    /run/user/1000/gnupg/S.gpg-agent.browser
+unix  2      [ ACC ]     STREAM     LISTENING     22271    /run/user/1000/snapd-session-agent.socket
+unix  2      [ ACC ]     STREAM     LISTENING     22272    /run/user/1000/gnupg/S.gpg-agent
+unix  3      [ ]         DGRAM                    444      /run/systemd/notify
+unix  2      [ ACC ]     STREAM     LISTENING     22273    /run/user/1000/bus
+unix  2      [ ACC ]     STREAM     LISTENING     447      /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     460      /run/lvm/lvmetad.socket
+unix  2      [ ACC ]     STREAM     LISTENING     15769    @irqbalance786.sock
+unix  2      [ ACC ]     STREAM     LISTENING     462      /run/lvm/lvmpolld.socket
+unix  2      [ ACC ]     STREAM     LISTENING     464      /run/systemd/fsck.progress
+unix  2      [ ACC ]     STREAM     LISTENING     472      /run/systemd/journal/stdout
+unix  8      [ ]         DGRAM                    474      /run/systemd/journal/socket
+unix  6      [ ]         DGRAM                    753      /run/systemd/journal/dev-log
+unix  2      [ ]         DGRAM                    759      /run/systemd/journal/syslog
+unix  2      [ ACC ]     STREAM     LISTENING     14202    /var/lib/lxd/unix.socket
+unix  2      [ ACC ]     STREAM     LISTENING     14150    /run/acpid.socket
+unix  2      [ ACC ]     STREAM     LISTENING     14149    @ISCSIADM_ABSTRACT_NAMESPACE
+unix  2      [ ACC ]     STREAM     LISTENING     14160    /run/uuidd/request
+unix  2      [ ACC ]     STREAM     LISTENING     14166    /run/snapd.socket
+unix  2      [ ACC ]     STREAM     LISTENING     14176    /run/snapd-snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     14198    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     16011
+unix  3      [ ]         DGRAM                    445
+unix  3      [ ]         STREAM     CONNECTED     16750    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16587    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16561
+unix  3      [ ]         DGRAM                    446
+unix  3      [ ]         STREAM     CONNECTED     16032
+unix  3      [ ]         STREAM     CONNECTED     17420
+unix  3      [ ]         STREAM     CONNECTED     16291
+unix  3      [ ]         STREAM     CONNECTED     16720
+unix  2      [ ]         DGRAM                    930
+unix  3      [ ]         STREAM     CONNECTED     16033    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     21360
+unix  2      [ ]         DGRAM                    12601
+unix  3      [ ]         DGRAM                    21358
+unix  3      [ ]         STREAM     CONNECTED     17898    /var/run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    12647
+unix  3      [ ]         STREAM     CONNECTED     12642    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    22929
+unix  3      [ ]         DGRAM                    21359
+unix  3      [ ]         STREAM     CONNECTED     15857
+unix  3      [ ]         DGRAM                    21357
+unix  2      [ ]         DGRAM                    21349
+unix  3      [ ]         DGRAM                    21356
+unix  3      [ ]         STREAM     CONNECTED     14201
+unix  3      [ ]         STREAM     CONNECTED     18535
+unix  3      [ ]         STREAM     CONNECTED     18577
+unix  3      [ ]         STREAM     CONNECTED     15518    /var/run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    12646
+unix  3      [ ]         STREAM     CONNECTED     17925    /var/run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    12604
+unix  2      [ ]         DGRAM                    15514
+unix  3      [ ]         STREAM     CONNECTED     13936    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     15516
+unix  3      [ ]         STREAM     CONNECTED     12641    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     14820
+unix  3      [ ]         STREAM     CONNECTED     15490
+unix  3      [ ]         STREAM     CONNECTED     16401    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    16020
+unix  3      [ ]         STREAM     CONNECTED     15601
+unix  3      [ ]         STREAM     CONNECTED     17813    /var/run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    13950
+unix  3      [ ]         STREAM     CONNECTED     15515
+unix  2      [ ]         DGRAM                    16696
+unix  3      [ ]         STREAM     CONNECTED     16119
+unix  3      [ ]         STREAM     CONNECTED     16780    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     21845    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     12598
+unix  3      [ ]         STREAM     CONNECTED     14314    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    22261
+unix  2      [ ]         DGRAM                    23028
+unix  3      [ ]         STREAM     CONNECTED     17346
+unix  3      [ ]         STREAM     CONNECTED     14315
+unix  3      [ ]         STREAM     CONNECTED     16731    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16563    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16582    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23021
+unix  3      [ ]         STREAM     CONNECTED     16042    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     22240    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     21346    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16480    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     15519    /var/run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    22262
+unix  2      [ ]         DGRAM                    22251
+unix  3      [ ]         STREAM     CONNECTED     17162
+unix  3      [ ]         STREAM     CONNECTED     23157
+unix  3      [ ]         STREAM     CONNECTED     21832
+unix  3      [ ]         STREAM     CONNECTED     23158
+unix  3      [ ]         STREAM     CONNECTED     16479
+unix  3      [ ]         STREAM     CONNECTED     17832    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     924
+vagrant@ubuntu-bionic:~$ netstat -plunt
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -
+udp        0      0 192.168.148.115:68      0.0.0.0:*                           -
+udp        0      0 10.0.2.15:68            0.0.0.0:*                           -
+vagrant@ubuntu-bionic:~$
